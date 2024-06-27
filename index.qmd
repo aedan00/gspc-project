@@ -52,7 +52,7 @@ ggplot(sp500, aes(x = Date, y = Close)) +
 However, the stock market tends to reliably rise in the long-term.
 
 <div class="nav-right">
- | [Go to Zoomed Graphs?](zoomed.qmd){style="color: #549471;"}
+ | [Go to 'Zoomed Graphs'?](zoomed.qmd){style="color: #549471;"}
 </div>
 
 

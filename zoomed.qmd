@@ -93,5 +93,5 @@ ggplot(covid_period, aes(x = Date, y = Close)) +
 ```
 
 <div class="nav-right">
- | [Go to Sources?](sources.qmd){style="color: #549471;"}
+ | [Go to 'Sources'?](sources.qmd){style="color: #549471;"}
 </div>

@@ -1,17 +1,13 @@
 /* css styles */
 body {
-    background-image: url('invest-background.png');
-    background-size: cover; /* Adjust as needed */
-    background-repeat: no-repeat; /* Adjust as needed */
-    /* Optional additional styles */
-    /* background-position: center center; */
-    /* background-attachment: fixed; */
+    background-image: url('invest-background-new.png');
+    background-size: cover; 
+    background-repeat: no-repeat; 
 }
 
 .highlight {
-    color: #006400; /* Dark green */
-    font-size: 1.0em;
-    font-weight: bold;
+    color: #c65656;
+    font-size: 1.1em;
 }
 
 .red {
@@ -20,11 +16,7 @@ body {
 
 .something1 {
     color: #373737; /* Dark grey */
-    font-size: 0.9em;
-}
-
-.blank-line {
-    margin: 20px 0; /* Adjust margin as needed */
+    font-size: 1.1em;
 }
 
 .nav-right {

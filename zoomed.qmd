@@ -9,10 +9,10 @@ execute:
 This page displays zoomed in versions of each historical event.  
 This way, each event's impact on the stock market can be better seen.
 
-**Maximum Loss:**  
-Dot-Com: -35.7%  
-2008 Recession: -46.7%  
-Covid-19 Pandemic: -32%  
+<span class="something1">**Maximum Loss:**</span>  
+<span class="highlight">Dot-Com:</span> -35.7%  
+<span class="highlight">2008 Recession:</span> -46.7%  
+<span class="highlight">Covid-19 Pandemic:</span> -32%  
 
 ```{r, fig.width=3.5, fig.height=2}
 # Load necessary libraries
@@ -93,5 +93,5 @@ ggplot(covid_period, aes(x = Date, y = Close)) +
 ```
 
 <div class="nav-right">
- | [Go to Sources?](sources.qmd){style="color: #373737;"}
+ | [Go to Sources?](sources.qmd){style="color: #549471;"}
 </div>

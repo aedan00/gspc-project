@@ -9,5 +9,5 @@ title: "About"
 Published: 6/27/2024
 
 <div class="nav-right">
- | [Back to Home?](index.qmd){style="color: #373737;"}
+ | [Back to Home?](index.qmd){style="color: #549471;"}
 </div>

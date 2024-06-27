@@ -4,7 +4,7 @@ title: "About"
 
 **Email:** liao.2@dublinstudents.net  
 **Repo:** [https://github.com/aedan00/gspc-project](https://github.com/aedan00/gspc-project)  
-**Course:** [https://bootcamp.davidkane.info/](C:/Users/Aedan/Pictures/Random/invest-background-new.png)  
+**Course:** [https://bootcamp.davidkane.info/](https://bootcamp.davidkane.info/)
 
 Published: 6/27/2024
 

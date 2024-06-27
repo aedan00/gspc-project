@@ -1,0 +1,97 @@
+---
+title: "Zoomed In"
+execute:
+  warning: false
+  echo: false
+  message: false
+---
+
+This page displays zoomed in versions of each historical event.  
+This way, each event's impact on the stock market can be better seen.
+
+**Maximum Loss:**  
+Dot-Com: -35.7%  
+2008 Recession: -46.7%  
+Covid-19 Pandemic: -32%  
+
+```{r, fig.width=3.5, fig.height=2}
+# Load necessary libraries
+library(quantmod)
+library(ggplot2)
+library(dplyr)
+
+# Get historical data for the S&P 500
+getSymbols("^GSPC", from = "2000-01-01", to = Sys.Date())
+sp500 <- Cl(GSPC) %>% as.data.frame()
+sp500$Date <- as.Date(row.names(sp500))
+names(sp500) <- c("Close", "Date")
+
+# Define significant historical events
+events <- data.frame(
+  Date = as.Date(c("2000-03-10", "2001-09-11", "2008-09-15", "2020-03-16", "2022-01-01")),
+  Event = c("Dot-com Bubble", "9/11 Attacks", "2008 Recession", "COVID-19 Pandemic", "Recent Technology Boom")
+)
+
+# Ensure event dates are in the stock data date range
+events <- events %>% filter(Date %in% sp500$Date)
+
+# Match event dates with closing prices
+events <- events %>%
+  left_join(sp500, by = "Date")
+
+# Zoom in on the dot-com bubble (approximately from 1999 to 2002)
+dotcom_period <- sp500 %>% filter(Date >= as.Date("1999-01-01") & Date <= as.Date("2002-12-31"))
+dotcom_event <- events %>% filter(Event == "Crash")
+
+ggplot(dotcom_period, aes(x = Date, y = Close)) +
+  geom_line(color = "blue") +
+  geom_point(data = dotcom_event, aes(x = Date, y = Close), color = "red", size = 3) +
+  geom_text(data = dotcom_event, aes(x = Date, y = Close, label = Event), 
+            vjust = -1, hjust = -0.1, color = "red", angle = 45, 
+            size = 4, fontface = "bold") +
+  labs(title = "Dot-Com Bubble",
+       x = "Date",
+       y = "Closing Price") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+#--
+
+# Zoom in on the 2008 recession (approximately from 2007 to 2009)
+recession_period <- sp500 %>% filter(Date >= as.Date("2007-01-01") & Date <= as.Date("2009-12-31"))
+recession_event <- events %>% filter(Event == "Crash")
+
+ggplot(recession_period, aes(x = Date, y = Close)) +
+  geom_line(color = "blue") +
+  geom_point(data = recession_event, aes(x = Date, y = Close), color = "red", size = 3) +
+  geom_text(data = recession_event, aes(x = Date, y = Close, label = Event), 
+            vjust = -1, hjust = -0.1, color = "red", angle = 45, 
+            size = 4, fontface = "bold") +
+  labs(title = "2008 Recession",
+       x = "Date",
+       y = "Closing Price") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+#--
+
+# Zoom in on the COVID-19 pandemic (approximately from 2019 to mid-2020)
+covid_period <- sp500 %>% filter(Date >= as.Date("2019-01-01") & Date <= as.Date("2020-06-30"))
+covid_event <- events %>% filter(Event == "Crash")
+
+ggplot(covid_period, aes(x = Date, y = Close)) +
+  geom_line(color = "blue") +
+  geom_point(data = covid_event, aes(x = Date, y = Close), color = "red", size = 3) +
+  geom_text(data = covid_event, aes(x = Date, y = Close, label = Event), 
+            vjust = -1, hjust = -0.1, color = "red", angle = 45, 
+            size = 4, fontface = "bold") +
+  labs(title = "COVID-19 Pandemic",
+       x = "Date",
+       y = "Closing Price") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+<div class="nav-right">
+ | [Go to Sources?](sources.qmd){style="color: #373737;"}
+</div>

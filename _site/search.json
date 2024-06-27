@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "zoomed.html",
+    "href": "zoomed.html",
+    "title": "Zoomed In",
+    "section": "",
+    "text": "This page displays zoomed in versions of each historical event.\nThis way, each event’s impact on the stock market can be better seen.\nMaximum Loss:\nDot-Com: -35.7%\n2008 Recession: -46.7%\nCovid-19 Pandemic: -32%\n\n\n[1] \"GSPC\"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n| Go to Sources?"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Events Impacting the S&P 500",
+    "section": "",
+    "text": "The S&P 500 is a critical aspect of today’s economy. Its performance impacts the wellbeing and state of the economy. It is comprised of multiple companies available on the stock market.\nBelow displayed are historical events affecting the S&P 500 and the overall stock market on a graph.\n\n\n[1] \"GSPC\"\n\n\n\n\n\n\n\n\n\nSignificant events create rapid volatility in the stock market.\nHowever, the stock market tends to reliably rise in the long-term.\n\n| Go to Zoomed Graphs?"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Email: liao.2@dublinstudents.net\nRepo: https://github.com/aedan00/gspc-project\nCourse: https://bootcamp.davidkane.info/\nPublished: 6/27/2024\n\n| Back to Home?"
+  },
+  {
+    "objectID": "sources.html",
+    "href": "sources.html",
+    "title": "Sources",
+    "section": "",
+    "text": "The events plotted come from Investopedia data.\nThe graph was created using the “dpylr”, “ggplot”, and “quantmod” packages.\nQuantmod: Pulled stock market data from a data set.\nGGPlot: Generated a viewable plot from the data.\nInvestopedia Event List\n\n| Go to About?"
+  }
+]

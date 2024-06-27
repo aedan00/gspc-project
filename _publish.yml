@@ -1,0 +1,6 @@
+- source: project
+  quarto-pub:
+    - id: 37f7b39d-2b15-48f5-be41-2cf69278e679
+      url: 'https://aedan.quarto.pub/events-impacting-the-gspc'
+    - id: e4b548dd-6e40-48f5-bb13-9987df3d7506
+      url: 'https://aedan.quarto.pub/gspc-events'

@@ -1,0 +1,15 @@
+---
+title: "Sources"
+---
+
+The events plotted come from Investopedia data.  
+The graph was created using the "dpylr", "ggplot", and "quantmod" packages.
+
+Quantmod: Pulled stock market data from a data set.  
+GGPlot: Generated a viewable plot from the data.
+
+[Investopedia Event List](https://www.investopedia.com/timeline-of-stock-market-crashes-5217820#:~:text=Some%20of%20the%20most%20significant,following%20the%20outbreak%20of%20COVID.)
+
+<div class="nav-right">
+ | [Go to About?](about.qmd){style="color: #373737;"}
+</div>

@@ -1,0 +1,58 @@
+---
+title: "Events Impacting the S&P 500"
+execute:
+  warning: false
+  echo: false
+  message: false
+---
+
+The S&P 500 is a critical aspect of today's economy. Its performance impacts the wellbeing and state of the economy.   It is comprised of multiple companies available on the stock market.  
+Below displayed are historical events affecting the S&P 500 and the overall stock market on a graph.
+
+```{r}
+# Load necessary libraries
+library(quantmod)
+library(ggplot2)
+library(dplyr)
+
+# Get historical data for the S&P 500
+getSymbols("^GSPC", from = "2000-01-01", to = Sys.Date())
+sp500 <- Cl(GSPC) %>% as.data.frame()
+sp500$Date <- as.Date(row.names(sp500))
+names(sp500) <- c("Close", "Date")
+
+# Define significant historical events
+events <- data.frame(
+  Date = as.Date(c("2000-03-10", "2001-09-11", "2008-09-15", "2020-03-16", "2022-01-01")),
+  Event = c("Dot-com Bubble", "9/11 Attacks", "2008 Recession", "COVID-19 Pandemic", "Recent Technology Boom")
+)
+
+# Ensure event dates are in the stock data date range
+events <- events %>% filter(Date %in% sp500$Date)
+
+# Match event dates with closing prices
+events <- events %>%
+  left_join(sp500, by = "Date")
+
+# Create the plot
+ggplot(sp500, aes(x = Date, y = Close)) +
+  geom_line(color = "blue") +
+  geom_point(data = events, aes(x = Date, y = Close), color = "red", size = 3) +
+  geom_text(data = events, aes(x = Date, y = Close, label = Event), 
+            vjust = -1, hjust = -0.1, color = "red", angle = 45) +
+  labs(title = "S&P 500 Movement with Significant Events",
+       x = "Date",
+       y = "Closing Price") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+
+**Significant events create rapid volatility in the stock market.**  
+However, the stock market tends to reliably rise in the long-term.
+
+<div class="nav-right">
+ | [Go to Zoomed Graphs?](zoomed.qmd){style="color: #373737;"}
+</div>
+
+

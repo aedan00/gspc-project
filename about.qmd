@@ -1,0 +1,13 @@
+---
+title: "About"
+---
+
+**Email:** liao.2@dublinstudents.net  
+**Repo:** https://github.com/aedan00/gspc-project  
+**Course:** https://bootcamp.davidkane.info/  
+
+Published: 6/27/2024
+
+<div class="nav-right">
+ | [Back to Home?](index.qmd){style="color: #373737;"}
+</div>
